@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.imgbox {
+				width: 300px;
+			}
+
+			img {
+				width: 100%;
+				border: #0A005A solid 1px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<div class="imgbox">
+			<img class="imglazy" data-src="./img/cloudy-weather.jpg">
+			<hr>
+		</div>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<div class="imgbox">
+			<hr>
+			<img class="imglazy" data-src="./img/1549691012_weather_1.jpg">
+
+		</div>
+		<div class="imgbox">
+			<hr>
+			<img class="imglazy" data-src="./img/disasters.jpg">
+
+		</div>
+		<div class="imgbox">
+			<hr>
+			<img class="imglazy" data-src="img/perth-city-bg-1300.jpg">
+
+		</div>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<button class="btn" type="button">ddd</button>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<button class="btn" type="button">ddd</button>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<div class="imgbox">
+			<img class="imglazy" data-src="./img/xiaomi.jpg">
+		</div>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<p>ligedj</p>
+		<div class="imgbox">
+			<img class="imglazy" data-src="./img/J9QRJPW~GMY%60N02542VEK1J.webp">
+		</div>
+		
+		
+		<script type="text/javascript">
+			// let allImg = document.querySelectorAll('.imglazy') //获取所有img标签上类名
+			let screenHeight = window.innerHeight //获取屏幕可利用高度
+			// 判断是不是一开始就出现在屏幕上
+			// allImg.forEach((item) => {
+			// 	if (0 < item.getBoundingClientRect().top && item.getBoundingClientRect().top <= screenHeight) {
+			// 		item.setAttribute('src', item.getAttribute('data-src'))
+			// 		console.log("改了一张")
+			// 	}
+			// })
+			
+			// // 下面是没在屏幕上的元素滑到屏幕上是显示图片
+			// document.addEventListener('scroll', function scrollGetEl() {
+			// 	allImg.forEach((item) => {
+			// 		if (item.getBoundingClientRect().top <= screenHeight) {
+			// 			item.setAttribute('src', item.getAttribute('data-src'))
+			// 		}
+			// 	})
+			// })
+			// IntersectionObserver
+			let intersection = new IntersectionObserver((entrise,observe)=>{
+				console.log(entrise)
+				entrise.forEach(item=>{
+					if(item.isIntersecting){
+						//检测到进入界面要做的事
+						let observerTargetOFimg = item.target   //获取该项中被观察的img标签
+						observerTargetOFimg.setAttribute('src',observerTargetOFimg.getAttribute('data-src'))   //获取属性并修改
+						 intersection.unobserve(observerTargetOFimg)
+					}
+				})
+			})
+			
+			let allImg = document.querySelectorAll('img')
+			// 将获取到的img Dom分别放入intersectioObserver中，
+			allImg.forEach((oneImg)=>{
+				intersection.observe(oneImg)  //开始观察
+			})
+
+
+
+
+
+			// document.body.onmousedown = function(e) {
+			// 	// console.log(e.offsetX)
+			// 	// console.log(document.body.scrollTop)
+			// 	// console.log(document.documentElement.scrollTop)
+			// 	// console.log('scrollHeight',document.getElementById('btn').scrollHeight)
+			// 	// console.log('window.innerHeight',window.innerHeight)
+
+			// 	let allImg = document.querySelectorAll('.imglazy')
+			// 	// console.log(allImg)
+			// 	allImg.forEach((item) => {
+			// 		if (item.offsetTop < (window.innerHeight + document.documentElement.scrollTop) + 0) {
+			// 			console.log(window.innerHeight + document.documentElement.scrollTop)
+			// 			item.setAttribute('src', item.getAttribute('data-src'))
+			// 		}
+			// 	})
+
+			// }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#add_data_anime_box {
+				width: 200px;
+			}
+			#to_input {
+			  width: 100%;
+			  height: 0px;
+			  border: none;
+			  border-radius: 5px;
+			  padding: 0 5px;
+			  outline: none;
+			  box-sizing: border-box;
+			  background-color: rgba(0, 0, 0, 0);
+			  transition: all 0.5s;
+			}
+
+			#click_box {
+				box-sizing: border-box;
+				width: 100%;
+				height: 42px;
+				border: #ccc solid 1px;
+				border-radius: 5px;
+				background: limegreen;
+				color: white;
+				transition: all 0.5s;
+				margin-top: 5px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#commit_btn {
+				box-sizing: border-box;
+				width: 100%;
+				height: 42px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-radius: 5px;
+				background: limegreen;
+				color: white;
+				transition: all 0.5s;
+				margin-top: 5px;
+				height: 0px;
+				border: none;
+				overflow: hidden;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="add_data_anime_box">
+
+
+			<input type="" id="to_input" placeholder="请输入添加的值" />
+			<button id="commit_btn">提交</button>
+			<button id="click_box" onclick="show_input_box()">
+				+ 添加
+			</button>
+		</div>
+		
+		
+		<script type="text/javascript">
+			function show_input_box() {
+				let input_box = document.getElementById("to_input")
+				let control_btn = document.getElementById("click_box")
+				let commit_btn = document.getElementById("commit_btn")
+				console.log(input_box.style.height)
+				if (input_box.style.height == "0px" || input_box.style.height == "") {
+					// 展开输入框
+					input_box.style.height = "42px"
+					input_box.style.border = "#ccc solid 1px"
+					control_btn.style.background = "red"
+					control_btn.innerHTML = "- 取消"
+					// 展开提交按钮
+					commit_btn.style.height = "42px";
+					commit_btn.style.border = "#ccc solid 1px";
+				} else {
+					// 合并输入框
+					input_box.style.height = "0px"
+					input_box.style.border = "#ccc solid 0px"
+					control_btn.style.background = "limegreen"
+					control_btn.innerHTML = "+ 添加"
+					input_box.value = ""
+					// 合并提交按钮
+					commit_btn.style.height = "0px";
+					commit_btn.style.border = "#ccc solid 0px";
+				}
+
+			}
+		</script>
+	</body>
+</html>

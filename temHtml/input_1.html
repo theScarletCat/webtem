@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.input_upper_box {
+				position: relative;
+				border: 1px #CCCCCC solid;
+				border-radius: 5px;
+				padding: 5px;
+				box-sizing: border-box;
+			}
+			#upper_logo_1 {
+				width: calc(100% - 10px);
+				height: calc(100% - 10px);
+				position: absolute;
+				pointer-events: none;
+				background: white;
+				text-align: center;
+				/* transform:all 1s; */
+				transition: all 0.5s;
+			}
+			.input_upper_box input {
+				height: 100%;
+				width: 100%;
+				border: 0px;
+				outline:none;
+				background-color: rgba(0, 0, 0, 0); /* // 透明背景 */
+				
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="input_upper_box">
+			<div id="upper_logo_1">
+				<span style="color: red;">Text </span>
+				 <span style="color: orange;">or</span>
+				 <span style="color: green;">icon</span>
+			</div>
+			<input type="text" placeholder="请数据关键字" name="" id="under_input" value="" onblur="isShow()" onfocus="hiddenUpperLogo()" />
+		</div>
+
+		<script type="text/javascript">
+		// 用在获得焦点时，显示输入框上层的标志
+			function hiddenUpperLogo() {
+				// document.getElementById("upper_logo_1").style.display = "none"  //使用display没有渐变动画效果
+				document.getElementById("upper_logo_1").style.opacity = 0;
+			}
+			
+			// 用在失去焦点时，input框有类容就不显示输入框上层的标志
+			function isShow(){
+				let inputDom = document.getElementById("under_input")
+				if(!inputDom.value){
+					// document.getElementById("upper_logo_1").style.display = "block"    //使用display没有渐变动画效果
+					document.getElementById("upper_logo_1").style.opacity = 1;
+				}
+			}
+		</script>
+	</body>
+</html>

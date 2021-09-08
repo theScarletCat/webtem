@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="file" name="" id="file_1" value="" />
+		<input type="button" name="" id="commit" value="提交" onclick="getdata()" />
+
+		<script type="text/javascript">
+			// function uploadFlie() {
+			// 	return new Promise(resolve => {
+			// 		console.log(document.getElementById("file_1").files)
+			// 		let file = document.getElementById("file_1").files[0]
+			// 		let fr = new FileReader()
+			// 		let fileContent = "1"
+			// 		fr.readAsText(file)
+			// 		fr.onload = (f) => {
+			// 			console.log("readed file:", f)
+			// 			console.log("readed file:", fr.result)
+			// 			console.log("fileContent:", fileContent)
+			// 			// fileContent = fr.result
+			// 			console.log("执行到读取完毕")
+			// 			resolve(fr.result)
+			// 		}
+
+			// 	})
+			// }
+
+			// async function getdata() {
+			// 	let a = await uploadFlie()
+			// 	console.log("--------------", a)
+			// }
+		</script>
+		<script type="text/javascript">
+			function uploadFlie() {
+				return new Promise(resolve => {
+					let file = document.getElementById("file_1").files[0]
+					let fr = new FileReader()
+					fr.readAsText(file)
+					fr.onload = (f) => {
+						console.log("执行到读取完毕")
+						resolve(fr.result)
+					}
+
+				})
+			}
+
+			async function getdata() {
+				let a = await uploadFlie()
+				console.log("--------------", a)
+			}
+		</script>
+	</body>
+
+</html>

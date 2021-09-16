@@ -2,7 +2,24 @@ var vm = new Vue({
 	el: '#app',
 	data: {
 		taglist:[],
-		mdfileContent:""
+		mdfileContent:"",
+		menuList:[
+			{
+				menuName:"笔记",
+				id:"gr54r",
+				target:""
+			},
+			{
+				menuName:"博客",
+				id:"ylidje4r",
+				target:"https://www.cnblogs.com/simpleMirror/"
+			},
+			{
+				menuName:"其他",
+				id:"hh3ts",
+				target:""
+			}
+			,]
 	},
 	mounted() {
 		this.getJsonContents()

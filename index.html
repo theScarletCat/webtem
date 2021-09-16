@@ -3,42 +3,66 @@
 	<head>
 		<meta charset="utf-8" />
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="./css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/public.css" />
 		<!-- <link rel="stylesheet" type="text/css" href="./css/prism.css"/> -->
 	</head>
 	<body>
 		<div id="app">
-			
-		
-		<header></header>
-		<div id="body">
-			<nav>
-				<div class="tagls" 
-				v-for="i in taglist" 
-				:key="i.id" 
-				v-text="i.tagname" 
-				@click="changeTagcontent(i.id)"
-				:id="window.location.search.indexOf(i.id) > 0?'isActive':''"
-				>
-					
+
+
+			<header id="header">
+				<div class="headerImg">
+					<img src="temHtml/img/t0115533452c4117afc.png">
 				</div>
-			</nav>
-			<main>
-				<div id="md-view" v-html="mdfileContent">
-				
+				<div class="menuBox">
+					<template  v-for="item in menuList" :key="item.id" >
+					<a :href="item.target" target="_blank">
+					<div class="menuItem" v-text="item.menuName" :class="item.id=='gr54r'?'chooseItem':''">
+					</div>
+					</a>
+					</template>
 				</div>
-				<footer>44</footer>
-			</main>
+
+
+
+			</header>
+			<div id="body">
+				<nav>
+					<div id="flexLeft" class="">
+						<div class="glassMask">
+							<a href="#header">
+							<div class="tagls" v-for="i in taglist" :key="i.id" v-text="i.tagname"
+								@click="changeTagcontent(i.id)"
+								:id="window.location.search.indexOf(i.id) > 0?'isActive':''">
+
+							</div>
+							</a>
+						</div>
+						<img id="navBgBlur" src="temHtml/img/20100616094031104.jpg">
+						<!-- <img id="navBgNotBlur" src="temHtml/img/20100616094031104.jpg" > -->
+					</div>
+				</nav>
+				<main>
+					<div id="md-view" v-html="mdfileContent">
+					</div>
+					<footer>
+						
+						<div class="imgBox1">
+							<img src="./temHtml/img/916115750.jpg" >
+						</div>
+						<!-- <img id="footerBG" src="temHtml/img/footer.png" > -->
+					</footer>
+				</main>
+			</div>
+
 		</div>
-		
-		</div>
-		
+
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="./js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./js/marked.js" type="text/javascript" charset="utf-8"></script>
 		<script src="./js/dataProcess.js" type="text/javascript" charset="utf-8"></script>
 		<!-- <script src="./js/prism.js" type="text/javascript" charset="utf-8"></script> -->
-		
+		<script src="js/selfAnime.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			// $.get("./contents/mdfileContents.json", (data, status) => {
 			// 	console.log("data----------------")
